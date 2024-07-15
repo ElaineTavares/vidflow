@@ -154,54 +154,54 @@ let videos = [
     buscarEMostrarVideos()
 
 
-//FILTRAR VIDEOS NA BARRA DE PESQUISA
-const barraDePesquisa = document.querySelector(".pesquisar__input");
-barraDePesquisa.addEventListener('input', filtrarPesquisa )
+// //FILTRAR VIDEOS NA BARRA DE PESQUISA
+// const barraDePesquisa = document.querySelector(".pesquisar__input");
+// barraDePesquisa.addEventListener('input', filtrarPesquisa )
 
-function filtrarPesquisa(){
-    const videos = document.querySelectorAll(".videos__item");
+// function filtrarPesquisa(){
+//     const videos = document.querySelectorAll(".videos__item");
 
-    if(barraDePesquisa.value != ""){
-        for(let video of videos){
-            let titulo = video.querySelector(".titulo-video").textContent.toLowerCase();
-            let valorFiltro = barraDePesquisa.value.toLowerCase();
+//     if(barraDePesquisa.value != ""){
+//         for(let video of videos){
+//             let titulo = video.querySelector(".titulo-video").textContent.toLowerCase();
+//             let valorFiltro = barraDePesquisa.value.toLowerCase();
 
-            if(!titulo.includes(valorFiltro)){
-                video.style.display = ("none")
-            } else {
-                video.style.display = ("block")
-            }
-        }
-    } else {
-        videos.style.display = ("block")
-    }
-}
+//             if(!titulo.includes(valorFiltro)){
+//                 video.style.display = ("none")
+//             } else {
+//                 video.style.display = ("block")
+//             }
+//         }
+//     } else {
+//         videos.style.display = ("block")
+//     }
+// }
 
 
-//FILTRAR VIDEOS PELOS BOTOES DE CATEGORIAS
-const botaoCategoria = document.querySelectorAll(".superior__item");
-// console.log(botaoCategoria)
+// //FILTRAR VIDEOS PELOS BOTOES DE CATEGORIAS
+// const botaoCategoria = document.querySelectorAll(".superior__item");
+// // console.log(botaoCategoria)
 
-botaoCategoria.forEach((botao) => {
-    let nomeCategoria = botao.getAttribute("name");
-    botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
-})
+// botaoCategoria.forEach((botao) => {
+//     let nomeCategoria = botao.getAttribute("name");
+//     botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
+// })
 
-function filtrarPorCategoria(filtro){
-    const videos = document.querySelectorAll(".videos__item");
-    for (let video of videos){
-        let categoria = video.querySelector(".categoria").textContent.toLowerCase();
-        // console.log(categoria)
-        let valorFiltro = filtro.toLowerCase();
-        // console.log(valorFiltro)
+// function filtrarPorCategoria(filtro){
+//     const videos = document.querySelectorAll(".videos__item");
+//     for (let video of videos){
+//         let categoria = video.querySelector(".categoria").textContent.toLowerCase();
+//         // console.log(categoria)
+//         let valorFiltro = filtro.toLowerCase();
+//         // console.log(valorFiltro)
 
-        if(!categoria.includes(valorFiltro) && valorFiltro != 'tudo'){
-            video.style.display = "none";
-        } else {
-            video.style.display = "block";
-        }
-    }
-}
+//         if(!categoria.includes(valorFiltro) && valorFiltro != 'tudo'){
+//             video.style.display = "none";
+//         } else {
+//             video.style.display = "block";
+//         }
+//     }
+// }
 
 
 
